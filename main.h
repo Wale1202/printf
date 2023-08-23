@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+void print_char(va_list args);
 
 
 #endif /* MAIN_H f */

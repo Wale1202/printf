@@ -4,6 +4,7 @@
  * _printf - Custom printf function
  * @format: The format string
  * ... : The values to format and print
+ * print_char - prints character
  * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
@@ -48,4 +49,9 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (i);
 }
+void print_char(va_list args)
+{
+	char c = va_arg(args, int);
 
+	write(1, &c, 1);
+}
