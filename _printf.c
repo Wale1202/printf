@@ -4,8 +4,6 @@
  * _printf - Custom printf function
  * @format: The format string
  * ... : The values to format and print
- * print_char - prints character in the code
- * print_string - prints string in the code
  * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
@@ -50,12 +48,23 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (i);
 }
+/**
+ * print_char - prints characters
+ * 
+ * Return: none
+ */
 void print_char(va_list args)
+
 {
 	char c = va_arg(args, int);
 
 	write(1, &c, 1);
 }
+/**
+ * print_string - prints string
+ * 
+ * Return: none
+ */
 void print_string(va_list args)
 {
 char *str = va_arg(args, char *);
@@ -67,4 +76,16 @@ char *str = va_arg(args, char *);
 		write(1, str, 1);
 		str++;
 	}
+}
+/**
+ * print_percent - prints percentage
+ * void - parameters
+ * Return: nothing
+ */
+
+void print_percent(void)
+{
+	char c = '%';
+
+	write(1, &c, 1);
 }
